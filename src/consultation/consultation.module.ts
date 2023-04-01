@@ -1,8 +1,8 @@
-import { Module } from '@nestjs/common';
-import { TypegooseModule } from 'nestjs-typegoose';
-import { ConsultationController } from './consultation.controller';
-import { ConsultationModel } from './consultation.model';
-import { ConsultationService } from './consultation.service';
+import { Module } from '@nestjs/common'
+import { TypegooseModule } from 'nestjs-typegoose'
+import { ConsultationController } from './consultation.controller'
+import { ConsultationModel } from './consultation.model'
+import { ConsultationService } from './consultation.service'
 
 @Module({
 	imports: [
@@ -10,7 +10,7 @@ import { ConsultationService } from './consultation.service';
 			{
 				typegooseClass: ConsultationModel,
 				schemaOptions: {
-					collection: 'programs',
+					collection: 'consultations',
 				},
 			},
 		]),

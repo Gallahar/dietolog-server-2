@@ -1,19 +1,17 @@
 {
 	"version": 2,
 	"installCommand": "npm install --legacy-peer-deps",
-	"build": {
-		"command": "npm install --legacy-peer-deps"
-	},
+	"buildCommand": "npm run build",
 	"builds": [
 		{
-			"src": "package.json",
+			"src": "./dist/main.ts",
 			"use": "@vercel/node"
 		}
 	],
 	"routes": [
 		{
 			"src": "/(.*)",
-			"dest": "dist/main.js",
+			"dest": "./dist/main.ts",
 			"methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
 		}
 	]

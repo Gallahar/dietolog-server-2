@@ -45,3 +45,6 @@ export class CertificateService {
 		await this.CertificateModel.findByIdAndDelete(_id).exec()
 	}
 }
+
+
+

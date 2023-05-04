@@ -25,7 +25,7 @@ let OrderService = class OrderService {
     async create(dto, language) {
         let newOrder = new this.OrderModel(dto);
         await newOrder.save();
-        const { theme, text } = (0, order_data_1.getOrderConfirmationText)(language, dto.name);
+        const { theme, text } = (0, order_data_1.getOrderConfirmationText)(language, dto.program_title);
         email_service_1.default.confirmation(dto.email, theme, text);
         email_service_1.default.adminAlert('Заказ программы');
     }

@@ -32,4 +32,7 @@ export class ProgramModel {
 
 	@prop()
 	radios: IProgramRadio[]
+
+	@prop({ default: false })
+	isAvailable: boolean
 }

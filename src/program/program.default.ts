@@ -22,4 +22,5 @@ export const defaultProgram: Omit<ProgramModel, 'id' | '_id'> = {
 	},
 	included: [],
 	radios: [],
+	isAvailable: false,
 }

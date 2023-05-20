@@ -1,4 +1,10 @@
-import { IsArray, IsNumber, IsObject, IsString } from 'class-validator'
+import {
+	IsArray,
+	IsBoolean,
+	IsNumber,
+	IsObject,
+	IsString,
+} from 'class-validator'
 import { LanguagedString } from 'src/config/interfaces'
 import { IProgramRadio } from '../program.interface'
 
@@ -29,4 +35,7 @@ export class UpdateProgramDto {
 
 	@IsArray()
 	radios: IProgramRadio[]
+
+	@IsBoolean()
+	isAvailable: boolean
 }

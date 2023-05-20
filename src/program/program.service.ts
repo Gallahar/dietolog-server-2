@@ -20,7 +20,10 @@ export class ProgramService {
 		return program
 	}
 
-	async getAll() {
+	async getAll(onlyAvailable: boolean) {
+		if (onlyAvailable) {
+			return this.ProgramModel.find({ isAvailable: true }).exec()
+		}
 		return this.ProgramModel.find().exec()
 	}
 
@@ -46,6 +49,6 @@ export class ProgramService {
 	}
 
 	async delete(_id: Types.ObjectId) {
-		await this.ProgramModel.findByIdAndDelete(_id).exec() 
+		await this.ProgramModel.findByIdAndDelete(_id).exec()
 	}
 }

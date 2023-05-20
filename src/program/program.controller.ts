@@ -13,14 +13,15 @@ import { Types } from 'mongoose'
 import { AdminGuard } from 'src/admin-auth/guards/admin.guard'
 import { UpdateProgramDto } from './dto/update-program.dto'
 import { ProgramService } from './program.service'
+import { Query } from '@nestjs/common/decorators'
 
 @Controller('programs')
 export class ProgramController {
 	constructor(private readonly ProgramService: ProgramService) {}
 
 	@Get()
-	async getAll() {
-		return this.ProgramService.getAll()
+	async getAll(@Query('onlyAvailable') onlyAvailable: boolean) {
+		return this.ProgramService.getAll(onlyAvailable)
 	}
 
 	@Get('/by-slug/:slug')
